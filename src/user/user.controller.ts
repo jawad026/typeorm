@@ -26,7 +26,7 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @Get(':id')
+  @Get(':id') // locolhost:5000/user/1
   findOne(@Param('id', ParseIntPipe) id: number) {
     return this.userService.findOne(id);
   }

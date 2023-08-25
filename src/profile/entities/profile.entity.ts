@@ -6,7 +6,6 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-
 @Entity()
 export class Profile {
   @PrimaryGeneratedColumn()

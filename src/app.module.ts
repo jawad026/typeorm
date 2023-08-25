@@ -6,6 +6,8 @@ import { UserModule } from './user/user.module';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 import { ProfileModule } from './profile/profile.module';
 import { PostModule } from './post/post.module';
+import { GroupModule } from './group/group.module';
+import { CommentModule } from './comment/comment.module';
 
 const config: PostgresConnectionOptions = {
   type: 'postgres',
@@ -19,7 +21,14 @@ const config: PostgresConnectionOptions = {
 };
 
 @Module({
-  imports: [TypeOrmModule.forRoot(config), UserModule, ProfileModule, PostModule],
+  imports: [
+    TypeOrmModule.forRoot(config),
+    UserModule,
+    ProfileModule,
+    PostModule,
+    GroupModule,
+    CommentModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
